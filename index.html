@@ -5,93 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Repeta</title>
     <meta name="description" content="Quizy i powtórki dla dzieci, na brzęczykach Buzz!, telefonach i laptopach." />
+    <meta name="theme-color" content="#170a2e" />
     <link rel="icon" href="/favicon.ico" />
-    <style>
-      :root {
-        --stage-deep: oklch(0.16 0.08 292);
-        --stage: oklch(0.22 0.11 289);
-        --stage-lit: oklch(0.31 0.14 287);
-        --ink: oklch(0.97 0.01 280);
-        --ink-dim: oklch(0.72 0.04 284);
-        --dome: oklch(0.63 0.25 22);
-        --blue: oklch(0.58 0.18 252);
-        --orange: oklch(0.76 0.18 61);
-        --green: oklch(0.71 0.22 143);
-        --yellow: oklch(0.87 0.18 106);
-        color-scheme: dark;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        min-height: 100dvh;
-        display: grid;
-        place-items: center;
-        padding: 24px 16px;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        color: var(--ink);
-        background:
-          radial-gradient(120% 80% at 50% -10%, var(--stage-lit) 0%, transparent 55%),
-          radial-gradient(90% 60% at 50% 110%, var(--stage) 0%, transparent 60%),
-          var(--stage-deep);
-      }
-      main {
-        max-width: 32rem;
-        text-align: center;
-      }
-      .caps {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 28px;
-      }
-      .caps span {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        box-shadow: inset 0 -4px 6px oklch(0 0 0 / 0.3), inset 0 3px 4px oklch(1 0 0 / 0.35);
-      }
-      h1 {
-        margin: 0 0 12px;
-        font-size: clamp(2.5rem, 10vw, 4rem);
-        letter-spacing: -0.02em;
-      }
-      p {
-        margin: 0 0 32px;
-        font-size: 1.125rem;
-        line-height: 1.5;
-        color: var(--ink-dim);
-      }
-      a.play {
-        display: inline-block;
-        padding: 14px 32px;
-        border-radius: 999px;
-        background: var(--dome);
-        color: white;
-        font-weight: 700;
-        font-size: 1.125rem;
-        text-decoration: none;
-        box-shadow: 0 4px 0 oklch(0.45 0.2 22), inset 0 3px 4px oklch(1 0 0 / 0.35);
-      }
-      a.play:active {
-        transform: translateY(2px);
-        box-shadow: 0 2px 0 oklch(0.45 0.2 22);
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400..800&family=JetBrains+Mono:wght@400..700&display=swap" />
+    <link rel="stylesheet" href="site.css" />
   </head>
   <body>
+    <header class="container nav">
+      <a class="wordmark" href="/">
+        <span class="caps" aria-hidden="true">
+          <span class="cap cap-red"></span><span class="cap cap-blue"></span><span class="cap cap-orange"></span><span class="cap cap-green"></span><span class="cap cap-yellow"></span>
+        </span>
+        Repeta
+      </a>
+      <a class="play play-sm" href="https://app.repeta.it/">Zagraj</a>
+    </header>
+
     <main>
-      <div class="caps" aria-hidden="true">
-        <span style="background: var(--blue)"></span>
-        <span style="background: var(--orange)"></span>
-        <span style="background: var(--dome)"></span>
-        <span style="background: var(--green)"></span>
-        <span style="background: var(--yellow)"></span>
+      <div class="container hero">
+        <div>
+          <h1>Quiz na wieczór z rodziną</h1>
+          <p class="lead">Gracie na brzęczykach Buzz!, telefonach i laptopie. Najmłodsi nie muszą czytać.</p>
+          <a class="play" href="https://app.repeta.it/">Zagraj</a>
+        </div>
+        <figure class="shot">
+          <img src="img/pytanie.jpg" width="1600" height="1000" alt="Ekran gry: pytanie „krowa” i cztery obrazki zwierząt w kolorowych ramkach, niebieskiej, pomarańczowej, zielonej i żółtej. Na górze trzech graczy z punktami." />
+        </figure>
       </div>
-      <h1>Repeta</h1>
-      <p>Quizy i powtórki dla dzieci. Grają razem: na brzęczykach Buzz!, na telefonach i na laptopie, w jednej grze.</p>
-      <a class="play" href="https://app.repeta.it/">Zagraj</a>
+
+      <section class="container" aria-labelledby="na-czym">
+        <div class="head">
+          <h2 id="na-czym">Każdy gra na tym, co ma</h2>
+          <p class="lead">Brzęczyk i telefon mają w grze równe szanse.</p>
+        </div>
+        <div class="bento">
+          <article class="tile tile-phone">
+            <figure class="shot">
+              <img src="img/telefon.jpg" width="780" height="1688" loading="lazy" alt="Ta sama gra na telefonie: pytanie „lew”, cztery zwierzęta i na dole pięć kolorowych przycisków." />
+            </figure>
+            <div>
+              <h3>Telefon</h3>
+              <p>Zeskanuj kod QR z ekranu i grasz. Dołączysz nawet w trakcie gry.</p>
+            </div>
+          </article>
+          <article class="tile tile-buzz">
+            <div class="big-caps" aria-hidden="true">
+              <span class="cap cap-red"></span><span class="cap cap-blue"></span><span class="cap cap-orange"></span><span class="cap cap-green"></span><span class="cap cap-yellow"></span>
+            </div>
+            <div>
+              <h3>Brzęczyki Buzz!</h3>
+              <p>Bezprzewodowe brzęczyki z PlayStation. Odbiornik podłączasz do USB, grę otwierasz w Chrome.</p>
+              <p class="note">Tylko baterie alkaliczne, na akumulatorkach brzęczyki nie działają.</p>
+            </div>
+          </article>
+          <article class="tile tile-screen">
+            <h3>Laptop albo telewizor</h3>
+            <p>Otwierasz grę w przeglądarce, a pytania widzi cały pokój.</p>
+          </article>
+          <article class="tile tile-count">
+            <p class="figure-big">4+</p>
+            <p>Brzęczyki są cztery, graczy może być więcej. Reszta gra na telefonach.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container" aria-labelledby="dla-kogo">
+        <div class="switch-head">
+          <h2 id="dla-kogo">Dla małych i dużych</h2>
+          <p class="lead">Pytania czyta głos, a każda odpowiedź ma kolor przycisku. Nie trzeba umieć czytać.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Przykładowa talia" hidden>
+          <button class="tab" role="tab" id="tab-zwierzaki" aria-controls="stan-zwierzaki" aria-selected="true" type="button">Zwierzaki</button>
+          <button class="tab" role="tab" id="tab-tabliczka" aria-controls="stan-tabliczka" aria-selected="false" type="button" tabindex="-1">Mnożenie</button>
+        </div>
+        <figure class="state" id="stan-zwierzaki" role="tabpanel" aria-labelledby="tab-zwierzaki">
+          <div class="shot">
+            <img src="img/wynik.jpg" width="1600" height="1000" loading="lazy" alt="Wynik pytania „wilk”: dobra odpowiedź jest podświetlona, przy każdej odpowiedzi widać twarze graczy, którzy ją wybrali, a punkty lecą do ich kart." />
+          </div>
+          <figcaption>Po każdym pytaniu widać, kto co wybrał.</figcaption>
+        </figure>
+        <figure class="state" id="stan-tabliczka" role="tabpanel" aria-labelledby="tab-tabliczka">
+          <div class="shot">
+            <img src="img/tabliczka.jpg" width="1600" height="1000" loading="lazy" alt="Pytanie z tabliczki mnożenia: 4 × 8 i cztery odpowiedzi w kolorowych ramkach, 32, 28, 36 i 24." />
+          </div>
+          <figcaption>Dla starszych: tabliczka mnożenia i trudniejsze talie.</figcaption>
+        </figure>
+      </section>
+
+      <section class="container" aria-labelledby="jak-gracie">
+        <div class="rows-wrap">
+          <div class="head">
+            <h2 id="jak-gracie">Tryby gry</h2>
+          </div>
+          <ul class="rows">
+            <li><h3>Gramy</h3><p>10 punktów za dobrą odpowiedź. Za błąd nic nie tracisz.</p></li>
+            <li><h3>Hardcore</h3><p>Szybciej znaczy więcej punktów. Za błąd tracisz podwójnie.</p></li>
+            <li><h3>Drużyny</h3><p>Dwie drużyny. Rodzic gra w parze z najmłodszym.</p></li>
+            <li><h3>Nauka w pojedynkę</h3><p>Ćwiczenie w pojedynkę. Trudne pytania wracają częściej.</p></li>
+          </ul>
+        </div>
+      </section>
+
     </main>
+
+    <footer class="container footer">
+      <p class="statement">Otwórz grę na telewizorze. Reszta dołączy telefonem.</p>
+      <a class="play" href="https://app.repeta.it/">Zagraj</a>
+      <p class="legal">Buzz! to znak towarowy Sony Interactive Entertainment. Repeta nie jest związana z Sony. Gra działa na <a href="https://app.repeta.it/">app.repeta.it</a>.</p>
+    </footer>
+
+    <script>
+      (() => {
+        const tabs = document.querySelector(".tabs");
+        if (!tabs) return;
+        const buttons = [...tabs.querySelectorAll(".tab")];
+        const show = (picked) => {
+          for (const b of buttons) {
+            const on = b === picked;
+            b.setAttribute("aria-selected", String(on));
+            b.tabIndex = on ? 0 : -1;
+            document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
+          }
+        };
+        tabs.hidden = false;
+        show(buttons[0]);
+        tabs.addEventListener("click", (e) => {
+          const b = e.target.closest(".tab");
+          if (b) show(b);
+        });
+        tabs.addEventListener("keydown", (e) => {
+          const i = buttons.indexOf(document.activeElement);
+          if (i < 0 || (e.key !== "ArrowRight" && e.key !== "ArrowLeft")) return;
+          const next = buttons[(i + (e.key === "ArrowRight" ? 1 : buttons.length - 1)) % buttons.length];
+          next.focus();
+          show(next);
+        });
+      })();
+    </script>
   </body>
 </html>
